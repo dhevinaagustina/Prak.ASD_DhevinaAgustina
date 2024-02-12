@@ -19,7 +19,7 @@ public class SIAKAD10 {
         sks[6] = 3; // SKS Praktikum Dasar Pemrograman
         sks[7] = 2; // SKS Keselamatan dan Kesehatan Kerja
         int totalSKS = 0;
-        double totalBobotNilai = 0.0;
+        double totalBobotNilai = 0.00;
 
         System.out.println("=============================");
         System.out.println("Program Mengitung IP Semester");
@@ -29,42 +29,41 @@ public class SIAKAD10 {
             nilaiAngka[i] = scanner.nextInt();
             if (nilaiAngka[i] <= 100 && nilaiAngka[i] > 80) {
                 nilaiHuruf[i] = "A";
-                bobotNilaiSetara[i] = 4.0;
+                bobotNilaiSetara[i] = 4.00;
             } else if (nilaiAngka[i] <= 80 && nilaiAngka[i] > 73) {
                 nilaiHuruf[i] = "B+";
-                bobotNilaiSetara[i] = 3.5;
+                bobotNilaiSetara[i] = 3.50;
             } else if (nilaiAngka[i] <= 73 && nilaiAngka[i] > 65) {
                 nilaiHuruf[i] = "B";
-                bobotNilaiSetara[i] = 3.0;
+                bobotNilaiSetara[i] = 3.00;
             } else if (nilaiAngka[i] <= 65 && nilaiAngka[i] > 60) {
                 nilaiHuruf[i] = "C+";
-                bobotNilaiSetara[i] = 2.5;
+                bobotNilaiSetara[i] = 2.50;
             } else if (nilaiAngka[i] <= 60 && nilaiAngka[i] > 50) {
                 nilaiHuruf[i] = "C";
-                bobotNilaiSetara[i] = 2.0;
+                bobotNilaiSetara[i] = 2.00;
             } else if (nilaiAngka[i] <= 50 && nilaiAngka[i] > 39) {
                 nilaiHuruf[i] = "D";
-                bobotNilaiSetara[i] = 1.0;
+                bobotNilaiSetara[i] = 1.00;
             } else if (nilaiAngka[i] <= 39) {
                 nilaiHuruf[i] = "E";
-                bobotNilaiSetara[i] = 0.0;
+                bobotNilaiSetara[i] = 0.00;
             }
             totalBobotNilai += bobotNilaiSetara[i] * sks[i];
             totalSKS += sks[i];
-            
         }
+
         System.out.println("=============================");
         System.out.println("Hasil Konversi Nilai:");
         System.out.println("=============================");
         System.out.printf("%-40s%-15s%-15s%-15s\n", "MK", "Nilai Angka", "Nilai Huruf", "Bobot Nilai");
-        
         for (int i = 0; i < mk.length; i++) {
-            System.out.printf("%-40s%-15.1f%-15s%-15.1f\n", mk[i], nilaiAngka[i], nilaiHuruf[i], bobotNilaiSetara[i]);
+            System.out.printf("%-40s%-15.2f%-15s%-15.2f\n", mk[i], nilaiAngka[i], nilaiHuruf[i], bobotNilaiSetara[i]);
         }
 
         double ip = totalBobotNilai / totalSKS;
         System.out.println("=============================");
-        System.out.println("IP Semester Anda: " + ip);
+        System.out.printf("IP Semester Anda: %.2f%n", ip);
         System.out.println("=============================");
         }
         
