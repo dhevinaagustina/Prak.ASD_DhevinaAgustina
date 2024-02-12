@@ -1,2 +1,4 @@
-# Prak.ASD_DhevinaAgustina
+# DHEVINA AGUSTINA
+# SIB 1A
+# NO. 10
 TUGAS PRAKTIKUM ASD
