@@ -26,7 +26,7 @@ public class PlatMobil10 {
                 if (kodePlat.charAt(0) == KODE[i]) {
                     break;
                 }
-                i++;
+            i++;
             }
             if (i < KODE.length) {
                 System.out.print("Kota dengan plat " + kodePlat + " adalah: ");
