@@ -5,9 +5,11 @@ public class PelangganMain {
         Scanner input = new Scanner(System.in);
 
         Pelanggan[] arrayPelanggan = new Pelanggan[4];
-
-        for (int i = 1 ; i < 3 ; i++){
-            arrayPelanggan[i] = new Pelanggan();
+        // jumlah elemen = 4 dan bertipe data Pelanggan
+        Pelanggan pelanggan1 = new Pelanggan();
+        //inputan
+        for (int i = 0 ; i < 4 ; i++){
+            arrayPelanggan[i] = new Pelanggan(); //instansiasi
             System.out.print("Masukkan nama anda: ");
             arrayPelanggan[i].nama = input.next();
             System.out.print("Masukkan alamat Email: ");
@@ -21,7 +23,9 @@ public class PelangganMain {
             input.nextLine();
         }
         System.out.println();
-        for (int i = 1 ; i < 3 ; i++){
+
+        //output
+        for (int i = 0 ; i < 4 ; i++){
            arrayPelanggan[i].tampilPesanan(i);
         }
         

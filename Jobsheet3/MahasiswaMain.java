@@ -5,11 +5,14 @@ public class MahasiswaMain {
         Scanner input = new Scanner(System.in);
         
         Mahasiswa[] arrayMahasiswa = new Mahasiswa[3];
+        //jumlah elemen = 3 dan bertipe data Mahasiswa
         
-        double jumlahIPK = 0; 
+        double jumlahIPK = 0;
+        //inisialisasi ipk 
 
+        //inputan
         for(int i = 0; i < 3 ; i++){
-            arrayMahasiswa[i] = new Mahasiswa();
+            arrayMahasiswa[i] = new Mahasiswa(); //instansiasi
             System.out.println("Mahasiswa ke- " + (i+1));
             System.out.print("Masukkan nama: ");
             arrayMahasiswa[i].nama = input.next();
@@ -23,6 +26,7 @@ public class MahasiswaMain {
         }
         System.out.println();
 
+        //output
         int i = 0;
         for (Mahasiswa mahasiswa : arrayMahasiswa) {
             mahasiswa.informasiDataMahasiswa(i);

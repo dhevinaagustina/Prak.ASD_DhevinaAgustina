@@ -5,9 +5,11 @@ public class GedungMain {
         Scanner input = new Scanner(System.in);
         
         Gedung[] arrayGedung = new Gedung[3];
+        //jumlah elemen = 3 dan bertipe data Gedung
 
-        for (int i = 0 ; i < 3 ; i++){
-            arrayGedung[i] = new Gedung();
+        //inputan
+        for (int i = 1 ; i < 4 ; i++){
+            arrayGedung[i] = new Gedung(); //instansiasi
             System.out.print("Masukkan nama gedung: ");
             arrayGedung[i].nama = input.next();
             System.out.print("Masukkan kapasitas gedung: ");
@@ -17,8 +19,16 @@ public class GedungMain {
             input.nextLine();
         }
         System.out.println();
-        for (int i = 1 ; i < 3 ; i++){
-           arrayGedung[i].tampilInformasiGedung(i);
+
+        //output
+        for (int i = 1 ; i < 4 ; i++){
+           arrayGedung[i].tampilInformasi(i);
+        }
+        //foreach
+        int i = 1;
+        for (Gedung gedung : arrayGedung){
+            gedung.tampilInformasi(i);
+        i++;
         }
     }
 }

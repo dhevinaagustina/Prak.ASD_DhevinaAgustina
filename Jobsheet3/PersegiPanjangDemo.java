@@ -6,11 +6,14 @@ public class PersegiPanjangDemo {
 
         int panjangLength;
         int panjang, lebar;
+
         System.out.print("Masukkan panjang array: ");
         panjangLength = input.nextInt();
 
         PersegiPanjang[] arrayOfPersegiPanjang = new PersegiPanjang[panjangLength];
+        //jumlah elemen tergantung pada inputan user dan bertipe data PersegiPanjang
 
+        //inputan
         for (int i = 0; i < panjangLength; i++){
             System.out.println("Persegi panjang ke-" + (i +1));
             System.out.print("Masukkan panjang: ");
@@ -21,14 +24,11 @@ public class PersegiPanjangDemo {
             
         }
 
+        //output
         for (int i = 0; i < panjangLength; i++){
            arrayOfPersegiPanjang[i].cetakInfo(i);
           
         }
-
-        
-        
-
 
         // arrayOfPersegiPanjang[0] = new PersegiPanjang();
         // arrayOfPersegiPanjang[0].panjang = 110;
