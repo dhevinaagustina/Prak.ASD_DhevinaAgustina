@@ -44,7 +44,7 @@ public class Ticketing {
         System.out.print("Masukkan nama pengunjung yang dicari: ");
         String nama = scanner.nextLine();
         for (int i = 0; i < jumlahPengunjung; i++) {
-            String[] namaPengunjungKataKunci = pengunjungs[i].getNama().split("\\s+");
+            String[] namaPengunjungKataKunci = pengunjungs[i].getNama().split("\\s+");//memisahkan nama
             for (String kata : namaPengunjungKataKunci) {
                 if (kata.toLowerCase().contains(nama.toLowerCase())) {
                     System.out.println("Tipe Pengunjung: " + pengunjungs[i].getKategori() + ", Nama: " + pengunjungs[i].getNama() + ", Durasi: " + pengunjungs[i].getDurasi() + ", Biaya: " + pengunjungs[i].hitungBiaya());
@@ -80,9 +80,9 @@ public class Ticketing {
 
         for (int i = 0; i < jumlahPengunjung; i++) {
             if (pengunjungs[i].getKategori().equalsIgnoreCase("anak")) {
-                totalAnak += pengunjungs[i].hitungBiaya();
+                totalAnak += 1;
             } else if (pengunjungs[i].getKategori().equalsIgnoreCase("dewasa")) {
-                totalDewasa += pengunjungs[i].hitungBiaya();
+                totalDewasa += 1;
             }
         }
 
