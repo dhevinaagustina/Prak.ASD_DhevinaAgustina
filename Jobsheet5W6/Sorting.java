@@ -6,172 +6,173 @@ package Jobsheet5W6;
 
 public class Sorting {
 
+    // Metode untuk pencarian linear (sequential search) dalam array integer
     public static int sequentialSearch(int[] arr, int key) {
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == key) {
+        for (int i = 0; i < arr.length; i++) { // Iterasi melalui setiap elemen dalam array
+            if (arr[i] == key) { // Jika elemen saat ini sama dengan key yang dicari
                 return i; // Mengembalikan index di mana data ditemukan
             }
         }
         return -1; // Mengembalikan -1 jika data tidak ditemukan
     }
 
-    public static int binarySearchAsc (int[] arr, int key){
-        int start = 0, end = arr.length -1;
+    // Metode untuk pencarian biner dalam array yang diurutkan secara ascending (menaik)
+    public static int binarySearchAsc(int[] arr, int key) {
+        int start = 0, end = arr.length - 1; // Menginisialisasi variabel start dan end
 
-        while (start <= end) {
-            int mid = start + (end - start) /  2;
+        while (start <= end) { // Melakukan iterasi selama start lebih kecil atau sama dengan end
+            int mid = start + (end - start) / 2; // Menghitung nilai tengah (mid) untuk mencari di tengah array
 
-            if (arr[mid] == key){
-                return mid;
+            if (arr[mid] == key) { // Jika elemen di tengah sama dengan key yang dicari
+                return mid; // Mengembalikan index di mana data ditemukan
             }
 
-            if (arr[mid] < key){
-                start = mid + 1;
+            if (arr[mid] < key) { // Jika elemen di tengah lebih kecil dari key yang dicari
+                start = mid + 1; // Memperbarui start untuk mencari di bagian kanan array
+            } else { // Jika elemen di tengah lebih besar dari key yang dicari
+                end = mid - 1; // Memperbarui end untuk mencari di bagian kiri array
             }
-            else{
-                end = mid - 1;
-            } 
         }
-        return -1;
+        return -1; // Mengembalikan -1 jika data tidak ditemukan
     }
 
+    // Metode untuk pencarian biner dalam array yang diurutkan secara descending (menurun)
     public static int binarySearchDesc(int[] arr, int key) {
-        int start = 0, end = arr.length - 1;
+        int start = 0, end = arr.length - 1; // Menginisialisasi variabel start dan end
 
-        while (start <= end) {
-            int mid =  start + (end - start) / 2;
+        while (start <= end) { // Melakukan iterasi selama start lebih kecil atau sama dengan end
+            int mid = start + (end - start) / 2; // Menghitung nilai tengah (mid) untuk mencari di tengah array
 
-            if (arr[mid] == key) {
-                return mid;
+            if (arr[mid] == key) { // Jika elemen di tengah sama dengan key yang dicari
+                return mid; // Mengembalikan index di mana data ditemukan
             }
 
-            if (arr[mid] < key) {
-                end = mid - 1; // Memperbarui end untuk mencari di sebelah kiri
-            } else {
-                start = mid + 1; // Memperbarui start untuk mencari di sebelah kanan
+            if (arr[mid] < key) { // Jika elemen di tengah lebih kecil dari key yang dicari
+                end = mid - 1; // Memperbarui end untuk mencari di bagian kiri array
+            } else { // Jika elemen di tengah lebih besar dari key yang dicari
+                start = mid + 1; // Memperbarui start untuk mencari di bagian kanan array
             }
         }
-        return -1;
+        return -1; // Mengembalikan -1 jika data tidak ditemukan
     }
 
-    public static int binarySearch(int [] arr, int target){
-        boolean isAscending = arr[0] < arr[arr.length - 1];
-        
-        if (isAscending) {
-            return binarySearchAscending(arr, target);
-        } else {
-            return binarySearchDescending(arr, target);
+    // Metode untuk menentukan jenis pencarian biner (ascending atau descending) berdasarkan urutan array
+    public static int binarySearch(int[] arr, int target) {
+        boolean isAscending = arr[0] < arr[arr.length - 1]; // Mengecek apakah array diurutkan secara ascending
+
+        if (isAscending) { // Jika array diurutkan secara ascending
+            return binarySearchAscending(arr, target); // Gunakan metode pencarian biner ascending
+        } else { // Jika array diurutkan secara descending
+            return binarySearchDescending(arr, target); // Gunakan metode pencarian biner descending
         }
     }
 
-    // Method untuk pencarian biner jika array terurut secara ascending
+    // Metode untuk pencarian biner dalam array yang diurutkan secara ascending
     private static int binarySearchAscending(int[] arr, int target) {
         int start = 0;
         int end = arr.length - 1;
 
-        while (start <= end) {
-            int mid = start + (end - start) / 2;
+        while (start <= end) { // Melakukan iterasi selama start lebih kecil atau sama dengan end
+            int mid = start + (end - start) / 2; // Menghitung nilai tengah (mid)
 
-            if (arr[mid] == target) {
-                return mid;
-            } else if (arr[mid] < target) {
-                start = mid + 1;
-            } else {
-                end = mid - 1;
+            if (arr[mid] == target) { // Jika elemen di tengah sama dengan target yang dicari
+                return mid; // Mengembalikan index di mana data ditemukan
+            } else if (arr[mid] < target) { // Jika elemen di tengah lebih kecil dari target
+                start = mid + 1; // Pindah ke bagian kanan array
+            } else { // Jika elemen di tengah lebih besar dari target
+                end = mid - 1; // Pindah ke bagian kiri array
             }
         }
-
-        return -1; // Jika elemen tidak ditemukan
+        return -1; // Mengembalikan -1 jika target tidak ditemukan
     }
 
-    // Method untuk pencarian biner jika array terurut secara descending
+    // Metode untuk pencarian biner dalam array yang diurutkan secara descending
     private static int binarySearchDescending(int[] arr, int target) {
         int start = 0;
         int right = arr.length - 1;
 
-        while (start <= right) {
-            int mid = start + (right - start) / 2;
+        while (start <= right) { // Melakukan iterasi selama start lebih kecil atau sama dengan end
+            int mid = start + (right - start) / 2; // Menghitung nilai tengah (mid)
 
-            if (arr[mid] == target) {
-                return mid;
-            } else if (arr[mid] > target) {
-                start = mid + 1;
-            } else {
-                right = mid - 1;
+            if (arr[mid] == target) { // Jika elemen di tengah sama dengan target yang dicari
+                return mid; // Mengembalikan index di mana data ditemukan
+            } else if (arr[mid] > target) { // Jika elemen di tengah lebih besar dari target
+                start = mid + 1; // Pindah ke bagian kanan array
+            } else { // Jika elemen di tengah lebih kecil dari target
+                right = mid - 1; // Pindah ke bagian kiri array
             }
         }
-
-        return -1; // Jika elemen tidak ditemukan
+        return -1; // Mengembalikan -1 jika target tidak ditemukan
     }
 
+    // Deklarasi atribut untuk menyimpan informasi mahasiswa
+    private String[] daftarNamaMahasiswa; // Array untuk menyimpan nama mahasiswa
+    private int[] daftarUmurMahasiswa; // Array untuk menyimpan umur mahasiswa
+    private double[] daftarIPKMahasiswa; // Array untuk menyimpan IPK mahasiswa
 
-    private String[] daftarNamaMahasiswa;
-    private int[] daftarUmurMahasiswa;
-    private double[] daftarIPKMahasiswa;
-
+    // Konstruktor untuk inisialisasi atribut mahasiswa
     public Sorting(String[] daftarNamaMahasiswa, int[] daftarUmurMahasiswa, double[] daftarIPKMahasiswa) {
-        this.daftarNamaMahasiswa = daftarNamaMahasiswa;
-        this.daftarUmurMahasiswa = daftarUmurMahasiswa;
-        this.daftarIPKMahasiswa = daftarIPKMahasiswa;
+        this.daftarNamaMahasiswa = daftarNamaMahasiswa; // Menginisialisasi nama mahasiswa
+        this.daftarUmurMahasiswa = daftarUmurMahasiswa; // Menginisialisasi umur mahasiswa
+        this.daftarIPKMahasiswa = daftarIPKMahasiswa; // Menginisialisasi IPK mahasiswa
     }
 
-    // Method untuk pencarian nama mahasiswa berdasarkan keyword
+    // Metode untuk pencarian nama mahasiswa berdasarkan keyword menggunakan pencarian linear
     public String[] sequentialSearchByNama(String keyword) {
-        int count = 0;
+        int count = 0; // Variabel untuk menghitung jumlah nama yang cocok
 
-        // Hitung berapa banyak nama yang cocok dengan keyword
-        for (String nama : daftarNamaMahasiswa) {
-            if (nama.toLowerCase().contains(keyword.toLowerCase())) {
-                count++;
+        // Menghitung berapa banyak nama yang cocok dengan keyword
+        for (String nama : daftarNamaMahasiswa) { // Iterasi melalui setiap nama mahasiswa
+            if (nama.toLowerCase().contains(keyword.toLowerCase())) { // Jika nama mengandung keyword (case insensitive)
+                count++; // Tambah hitungan jika nama cocok
             }
         }
 
-        // Buat array hasil dengan ukuran sesuai dengan jumlah nama yang cocok
-        String[] hasilPencarian = new String[count];
-        int index = 0;
+        // Membuat array hasil dengan ukuran sesuai dengan jumlah nama yang cocok
+        String[] hasilPencarian = new String[count]; // Array untuk menyimpan hasil pencarian
+        int index = 0; // Indeks untuk menyimpan posisi dalam array hasil
 
-        // Isi array hasil dengan nama-nama yang cocok dengan keyword
-        for (String nama : daftarNamaMahasiswa) {
-            if (nama.toLowerCase().contains(keyword.toLowerCase())) {
-                hasilPencarian[index++] = nama;
+        // Mengisi array hasil dengan nama-nama yang cocok dengan keyword
+        for (String nama : daftarNamaMahasiswa) { // Iterasi melalui setiap nama mahasiswa
+            if (nama.toLowerCase().contains(keyword.toLowerCase())) { // Jika nama mengandung keyword (case insensitive)
+                hasilPencarian[index++] = nama; // Tambah nama ke array hasil dan increment indeks
             }
         }
-        return hasilPencarian;
+        return hasilPencarian; // Mengembalikan array hasil pencarian
     }
 
-    // Method untuk menampilkan informasi mahasiswa pada indeks tertentu
+    // Metode untuk menampilkan informasi mahasiswa pada indeks tertentu
     public void displayInfo(int index) {
-        if (index >= 0 && index < daftarNamaMahasiswa.length) {
-            System.out.println("Informasi Mahasiswa:");
-            System.out.println("Nama: " + daftarNamaMahasiswa[index]);
-            System.out.println("Umur: " + daftarUmurMahasiswa[index]);
-            System.out.println("IPK: " + daftarIPKMahasiswa[index]);
-        } else {
-            System.out.println("Index tidak valid.");
+        if (index >= 0 && index < daftarNamaMahasiswa.length) { // Mengecek apakah indeks valid
+            System.out.println("Informasi Mahasiswa:"); // Menampilkan header informasi
+            System.out.println("Nama: " + daftarNamaMahasiswa[index]); // Menampilkan nama mahasiswa
+            System.out.println("Umur: " + daftarUmurMahasiswa[index]); // Menampilkan umur mahasiswa
+            System.out.println("IPK: " + daftarIPKMahasiswa[index]); // Menampilkan IPK mahasiswa
+        } else { // Jika indeks tidak valid
+            System.out.println("Index tidak valid."); // Menampilkan pesan kesalahan
         }
     }
 
+    // Metode untuk pencarian umur mahasiswa menggunakan pencarian biner
     public int binarySearchByUmur(int targetUmur) {
         int start = 0;
         int end = daftarUmurMahasiswa.length - 1;
 
-        while (start <= end) {
-            int mid = start + (end - start) / 2;
+        while (start <= end) { // Melakukan iterasi selama start lebih kecil atau sama dengan end
+            int mid = start + (end - start) / 2; // Menghitung nilai tengah (mid)
 
-            // Jika umur ditemukan di tengah
-            if (daftarUmurMahasiswa[mid] == targetUmur)
-                return mid;
+            if (daftarUmurMahasiswa[mid] == targetUmur) // Jika umur ditemukan di tengah
+                return mid; // Mengembalikan index di mana umur ditemukan
 
             // Jika umur lebih besar, cari di setengah kiri array
-            if (daftarUmurMahasiswa[mid] < targetUmur)
-                start = mid + 1;
-            // Jika umur lebih kecil, cari di setengah kanan array
-            else
-                end = mid - 1;
+            if (daftarUmurMahasiswa[mid] < targetUmur) // Jika umur di tengah lebih kecil dari target
+            start = mid + 1; // Memperbarui start untuk mencari di bagian kanan array
+            else // Jika umur di tengah lebih besar dari target
+            end = mid - 1; // Memperbarui end untuk mencari di bagian kiri array
         }
 
         // Jika umur tidak ditemukan dalam array
-        return -1;
+        return -1; // Mengembalikan -1 jika targetUmur tidak ditemukan
     }
 
    
