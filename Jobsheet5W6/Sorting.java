@@ -186,8 +186,8 @@ public class Sorting {
             System.out.println("Data tidak ditemukan");
         }
     
-        int [] sortedNilaiAsc = {5, 5, 10, 20, 30, 40, 50};
-        int indexAsc = binarySearchAsc(sortedNilaiAsc, 5);
+        int [] sortedNilaiAsc = {5, 8, 10, 11, 13, 16,18, 21, 20, 34,33,45};
+        int indexAsc = binarySearchAsc(sortedNilaiAsc, 21);
         if (indexAsc != -1){
             System.out.println("Data ditemukan pada index ke-" + indexAsc);
         }else{

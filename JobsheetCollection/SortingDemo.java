@@ -10,5 +10,7 @@ public class SortingDemo {
         Collections.sort(daftarSiswa);
 
         System.out.println(daftarSiswa);
+
+        
     }
 }

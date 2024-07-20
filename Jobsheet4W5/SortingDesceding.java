@@ -91,7 +91,7 @@ public class SortingDesceding {
         // Metode main untuk mengeksekusi program
         public static void main(String[] args) {
             // Deklarasi dan inisialisasi array my1stNumbers
-            int my1stNumbers[] = {8, 6, 10, 2, 4};
+            int my1stNumbers[] = {23, 13, 9, 20, 17};
             // Urutkan my1stNumbers menggunakan metode bubbleSort dalam urutan menurun
             my1stNumbers = bubbleSort(my1stNumbers);
             // Cetak array yang telah diurutkan
